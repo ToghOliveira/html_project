@@ -1,0 +1,109 @@
+/* seletores*/
+h1{ selecionar tags}
+h1,h2{}
+h1 h2 {}
+
+#id{ selecionar id}
+#id .class{ selecionar ids e class}
+#id h1.class{ selecionar as class dentro de uma tag}
+#id .class.class2{seleciona a tag que tiver as 2 class}
+#id .class .class2{seleciona o dependente}
+#id .class .class2 h1{ seleciona a tag que esta dentro da class}
+#id .class>.class2{ seleciona a filha direta da class}
+#id .class>.class2>.class3{ seleciona a filha que esta diretamente ligada a filha}
+#id .class>.class2>.class3 h1{seleciona a tag que esta diretamente ligada a filha da filha}
+
+.class h1+p{ seleciona as tag que estao apos a 1 tag[ligaçao de irmaos]}
+.class h1~p{seleciona todas as tags que igual a indentificadas depois da primeira tag }
+
+[atributo]{selecionas os atributos citados}
+[atributo=valor"valor" ]{selecionas os atributos com os valores citados}
+[atributo~=valor" valor1 valor3" ]{selecionas os atributos com pelo menos valores citados}
+/* <div atributo= " valor1 valor2 valor3> ...*/
+[atributo|=valor"valor" ]{seleciona os atributos com os valores citados porem esse atibuto tem que ser segido de traço" - "}
+[atributo ^=valor"val" ]{seleciona os atributos que começa com os valores citados}
+[atributo $=valor"val" ]{seleciona os atributos que termina com os valores citados}
+
+/* pseudo classes*/
+.class:hover{a tag após o "/*:*/" define um evento para a class/tag/atributo selecionado
+    /* define que quando o mouse passar por cima do item selecionado avera modificaçoes*/
+}
+.class{
+    transition: all 1s ease-in-out; /*transiçao define as pseudo-class, oque vem após define qual "all(todas)",
+ tempo "1s(em qualquer medida de tempo",e o ultimo modifica o efeito aplicado*/
+}
+
+.class-algum-link:link{/* A pseudo-class Link define as modificaçoes para um link exibido na pagina*/
+    color:blueviolet 
+}
+.class-algum-link:visited{/* A pseudo-class Visited define as modificaçoes para um link ja visitado*/
+    color:palegreen
+}
+.class-algum-link:active{/* define que quando o item hover a açao de clique ocorrera algum evento*/
+    background: blue;
+}
+input:focus{/*Esse evento ocorre quando o input for selecionado ou esta sendo usado*/
+    box-shadow: rgba(0,0,0,0.8); /*define uma sombra que contorna o item */
+}
+input:disabled{/*Esse evento ocorre quando o input for desabilitado*/
+    cursor: not-allowed;/* cursor define que a modificaçao sera na seta do mouse, 
+    not-allowed é a modificaçao que neste caso seria exibir um simbolo de bloqueio no lugar do cursor */
+}
+/*<input type="checkbox">*/
+input:checked{/* checked é o efeito de quendo uma checbox esta marcada*/
+    width:"50px";
+    height:"25px";
+}
+input:checked + p {/* PENSAR SOBRE A LOGICA DE CRIAR UM MENU COM ISSO*/
+    /*+p vai definir que quando a checkbox estiver selecionada a sua filha (no caso "P") terá as modificaçoes*/ 
+    width:"50px";
+    height:"25px";
+}
+input:required{/*vai definir que quando o item for obrigatorio as modificaçoes citadaas seram aplicadas*/
+    background-color: aquamarine;
+}
+/* <p> pao de queijo <p>
+<p class="meio"> pao de queijo <p>
+<p> pao de queijo <p>*/
+p:not(.meio){/*define que oque for colocado no meio nao terá as modificaçoes aplicadas*/
+    color:brown;
+}
+input:not(:checked )+ p {/*+p vai definir que quando a checkbox não estiver selecionada a sua 
+    filha(no caso "P") terá as modificaçoes*/ 
+    width:"50px";
+    height:"25px";
+}
+.class ~+p :nth-child(2, even, odd, 3n+5){/* define qual dos irmaos devem ser selecionado
+    (2"o segundo irmao", even"os irmaos pares", odd"os irmaos impares", xn "n define que no entervalo de x as modificaçoes vao ser aplicadas, +x "+ define que apartir de x sera aplicado o n" */
+    color:brown;
+}
+/* pseudos elementos ão parecidos com p-class porem tem funçoes diferentes e são colocadas 2"::"*/
+
+.class::after{/* after define que apôs os itens da classe selecionada sera adicionada
+    o elementos/mudanças*/
+    content: 'xt';/*Content vai adicionar um elemento*/
+    background: #fff;
+}
+.class::before{/* define que antes os itens da classe selecionada sera adicionada
+    o elementos/mudanças*/
+    content: 'xt';/*Content vai adicionar um elemento*/
+    background: #fff;
+}
+.class::first-letter{/*  define que a primeira letra da classe selecionada sera modificada*/
+    color: #161616;
+    background: #fff;
+}
+.class::first-line{/*define que a primeira linha da classe selecionada sera modificada*/
+    color: #161616;
+    background: #fff;
+}
+.class::first-letter{/* define que a primeira letra da classe selecionada sera modificada*/
+    color: #161616;
+    background: #fff;
+}
+::selection{/* define modificaçoes para oque for selecionado/ laçado com o mouse*/
+    background: hotpink;
+}
+::placeholder{/*modifica os plecehoaders, pode ser selecionado ou modificar todos*/
+    background: cadetblue; 
+}

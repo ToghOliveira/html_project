@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: sans-serif;
+    }
+
+    label .input-name-label {
+        cursor: pointer;
+        display: block;
+    }
+
+    label .dev-checkbox {
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <form action="#" method="get" target="_blank" autocomplete="off">
+        <p>O meu formulario</p>
+        <p>
+            <label class="input-name-label" for="name">Nome</label><br>
+            <input type="text" id="name" name="first-name" placeholder="Digite seu primeiro nome" required>
+        </p>
+        <p>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="Digite seu email">
+        </p>
+        <p>
+            <label for="password-email">Senha</label><br>
+            <input type="password" id="password-email" name="password-email" placeholder="Digite uma senha">
+        </p>
+        <p>
+            <label for="image-you">Mande sua foto</label><br>
+            <input type="file" id="image-you" name="photo-client" accept=".png, image/*" multiple>
+        </p>
+        <p>
+            <label class="dev-checkbox" for="dev-input">Sou um Dev</label>
+            <input type="checkbox" id="dev-input" name="dev-input" value="true" checked>
+        </p>
+        <p>
+            <label class="birth-date" for="birth-date"> Data de Nascimento </label><br>
+            <input type="date" id="birth-date" name="birth-date">
+
+        </p>
+
+        <p> Como voce se identifica? <br>
+            <label class="input-genre" for="female">Femenino</label>
+            <input type="radio" id="female" name="genre" value="female"><br>
+            <label class="input-genre" for="masculine">Masculino</label>
+            <input type="radio" id="masculine" name="genre" value="masculine"><br>
+            <label class="input-genre" for="other">Other</label>
+            <input type="radio" id="other" name="genre" value="other">
+        </p>
+        <p>
+            <label for="sons-number">Quantos filhos?</label><br>
+            <input type="number" id="sons-number" name="sons-number" min="0" max="6" value="0">
+        </p>
+
+        <p>
+            <label for="url-linkedin"> Perfil do Linkedin</label><br>
+            <input type="url" id="url-linkedin" name="url-linkedin" placeholder="link do perfil">
+        </p>
+        <p>
+            <label for="select-country"> selecione seu País</label><br>
+            <select name="country-user" id="select-country">
+                <optgroup label="America">
+                    <option value="Brasil">Brasil</option>
+                    <option value="EUA">EUA</option>
+                </optgroup>
+                <optgroup label="Europa">
+                    <option value="França">França</option>
+                    <option value="Portugal">Portugal</option>
+                </optgroup>
+            </select>
+        </p>
+        <p><textarea name="experience-user" id="experience" cols="15" rows="19"
+                placeholder="Digite sua experiencia "></textarea>
+        </p>
+        <p>
+            <button type="reset"> limpar</button>
+            <button type="submit"> enviar</button>
+        </p>
+    </form>
+
+</body>
+
+</html>
