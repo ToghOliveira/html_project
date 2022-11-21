@@ -1,27 +1,122 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-.grid{
+html{
+    scroll-behavior: smooth;
+}
+header{
+  
+    width: 100vw;
+    height: 1.4rem;
+    background-color: #162090;
     
+}
+main{
+    position:relative;
+    top: 1.4rem;
 }
 .grid::after{
     content: " ";
-    display: block;
     clear: both; /*o clear limpa/define que nao pode ter algo.
     e oque vem apôs os ":" define aonde o clear deve atuar( left,right,both...)*/
 }
-.grid .col{
-    box-sizing: border-box;
-    width: 33.33%;
-    height: 300px;
-    float: left;
-    padding: 15px;
+.grid .col-one{
+    width: 100vw;
+    height: 100vw;
+    background: #161616;
 }
-.grid .col .col-content{
+.grid .col-content{
     width: 100%;
     height: 100%;
-    background: cornflowerblue;
+    color: #fff;
 }  
+
+.grid .col-two{
+    width: 100vw;
+    height: 100vw;
+    background: #162090;
+}
+.grid .col-tree{
+    width: 100vw;
+    height: 100vw;
+    background: #208020;
+}
+.grid .col-four .col-content {
+    width: 100vw;
+    height: 100vw;
+    color: #fff;
+    background-color: rgba(01,01,01,0.8);
+    font-size: 11px;
+    font-style:italic;
+    font-weight: bold;/*A propriedade CSS font-weight define o peso (ou negrito) da fonte. Os pesos disponíveis dependem da família de fontes definida no momento.*/
+    direction: ltr;/*ltr(left to right) rtl(right to left)*/
+    letter-spacing: 1px;/* espaçamento entre as letras*/
+    word-spacing: 10px;/*espaçamento entre as palavras*/
+    line-height: 30px;/*altura da linha*/
+    text-align: center;/* define aonde o testo vai ficar*/
+    /*text-decoration: underline;*/
+    /*text-indent: 40px;/*define o espaçamento do paragrafo*/
+    text-shadow: 2px 2px #400; /*define uma sombra para o texto, x(px) define o eixo x/y e o outrox(px)define o esfumaçado e #xxx define a cor*/
+    text-transform: lowercase;/*lowercase(todas minusculas), uppercase(todas maisculas), capitalize(a primeira letra minuscula)*/
+
+
+}
+.grid .col-five{
+width: 100vw;
+height: 100vw;
+background: brown; 
+}
+.grid .col-five .pai{
+    position: relative;
+    top: 0;
+}
+.grid .col-five .filha1, .filha2,.filha3{
+    width: 18rem;
+    height: 20rem;
+}
+div .filha1{
+    position: absolute;
+    background: #162090;
+    z-index: 2;
+    top: 20rem;
+    right: 0rem;
+}
+div .filha2{
+    position: absolute; /* define modificaçoes de posiçao.
+    absolute define que o elemento esta em outra camada dando assim a propiedade de sobreposiçao*/ 
+    background:#400;
+    top: 20rem;
+    left: 0rem;
+    z-index: 1;/* quando um elemento 2/+ elementos estao em sobreposiçao o Z-index define em qual camada os elementos estão*/
+}
+div .filha3{
+    position: relative;/*relative define que o elemento sera mudificado em relaçao aos elementos e não ao viewPort*/
+    background: #450;
+    top: 20rem;
+    left: 20.5rem;
+}
+div .filha3 .outra{
+    position: absolute;
+    bottom: 25px;
+    left: 43px;
+}
+div .filha4{
+    position: absolute;
+    width: 100vw;
+    height: 19.8rem;
+    top: 0rem;
+    left: 0rem;
+    overflow-y: auto;
+}
+div .filha4 li{
+    color: #161616;
+}
+div .filha4 ul .sticky{
+    position: sticky;/* da uma olhada no projeto que nem eu sei esplicar*/
+    background: gray;
+    top: 0rem;
+}
 
 
